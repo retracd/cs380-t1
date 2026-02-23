@@ -30,7 +30,7 @@ Vue.createApp({
 
     clearAll() {
         // Deletes all stored stickies from session and storage
-        if (confirm("Clear all notes?")) {
+        if (confirm("Clear all stickies?")) {
             this.stickies = [];
             localStorage.removeItem(this.storageKey);
         }
