@@ -1,1 +1,13 @@
-No AI used.
+No AI used in app creation.
+
+AI was used for #5 of the reflection:
+"Why is saving implemented in a separate method ( `saveToStorage` ) instead of writing localStorage
+code directly in the watcher?"
+
+Gemini answered:
+Implementing saveToStorage() as a separate method is better than putting the code directly in the
+watcher because it follows the DRY (Don't Repeat Yourself) principle. This allows the saving logic
+to be reused in multiple places—like the watch handler for auto-saves and the clearAll() method—
+without duplicating code. It also makes the code cleaner and easier to debug.
+
+And I shortened this response down for my answer.
