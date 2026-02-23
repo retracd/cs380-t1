@@ -28,16 +28,12 @@ Vue.createApp({
       this.stickies = this.stickies.filter((s) => s.id != id);
     },
 
-    // ================================
-    // COMMIT 5 — Clear All
-    // ================================
-
     clearAll() {
-      // TODO (Commit 5):
-      // 1. Use confirm("Delete all notes?")
-      // 2. If confirmed:
-      //    - Clear the stickies array
-      //    - Remove the localStorage item using this.storageKey
+        // Deletes all stored stickies from session and storage
+        if (confirm("Clear all notes?")) {
+            this.stickies = [];
+            localStorage.removeItem(this.storageKey);
+        }
     },
 
     charCount(text) {
