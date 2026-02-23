@@ -26,23 +26,18 @@ Vue.createApp({
     // ================================
 
     addStickie() {
-      // TODO (Commit 3):
-      // Add a new object to this.stickies
-      //
-      // Required structure:
-      // { id: ..., text: "" }
-      //
-      // For id:
-      // - Use crypto.randomUUID() if available
-      // - Otherwise use a fallback (Date.now() + Math.random())
+        // Creates a new stickie with a random UUID if possible, else uses datetime + random permutation
+        const newStickie = {
+            id: crypto.randomUUID ? crypto.randomUUID() : String(Date.now() * 100000 + Math.random() * 100000),
+            text: "",
+        };
+
+        this.stickies.push(newStickie);
     },
 
     deleteStickie(id) {
-      // TODO (Commit 3):
-      // Remove the note that matches the provided id.
-      //
-      // Use Array.filter()
-      // Reassign the result back to this.stickies
+        // Deletes stickie using Array.filter(), filtering a on a predicate using !id
+        this.stickies = this.stickies.filter(s => s.id != id);
     },
 
     // ================================
